@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/practice_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.weiyin.qinplus.activity.PracticeActivity"
+    >
+    <ViewFlipper
+        android:id="@+id/practiceViewFlipper"
+        android:layout_marginTop="64px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ViewFlipper>
+    <include
+        android:id="@+id/practiceTitleRl"
+        layout="@layout/title_layout"
+        />
+</RelativeLayout>

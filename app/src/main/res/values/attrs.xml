@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <declare-styleable name="TextViewWithTTF">
+        <attr name="ttf_name" format="string" />
+    </declare-styleable>
+    <!-- 倒影控件属性 -->
+    <declare-styleable name="reflectItemView">
+        <attr name="isReflect"  format="boolean" />
+        <attr name="isShape"  format="boolean" />
+        <attr name="reflect_height"  format="dimension" />
+        <attr name="radius"  format="dimension" />
+        <attr name="refle_spacing"  format="dimension" />
+    </declare-styleable>
+    
+    <!-- 顶层控件属性 -->
+    <declare-styleable name="MainUpView">
+        <attr name="upImageRes"  format="reference" />
+        <attr name="shadowImageRes"  format="reference" />
+    </declare-styleable>
+    
+    <!-- 标签控件 -->
+     <declare-styleable name="LabelView">
+        <!-- 设置文字内容 -->
+        <attr name="lv_text" format="string"/>
+        <!-- 设置文字颜色,默认#ffffff -->
+        <attr name="lv_text_color" format="color"/>
+        <!-- 设置文字大小,默认11sp -->
+        <attr name="lv_text_size" format="dimension"/>
+        <!-- 设置文字是否支持加粗,默认true -->
+        <attr name="lv_text_bold" format="boolean"/>
+        <!-- 设置文字是否支持全部大写,默认true-->
+        <attr name="lv_text_all_caps" format="boolean"/>
+        <!-- 设置背景颜色,默认"#FF4081"-->
+        <attr name="lv_background_color" format="color"/>
+        <!-- 设置LabelView所在矩形最小宽高,默认mFillTriangle?35dp:50dp-->
+        <attr name="lv_min_size" format="dimension"/>
+        <!-- 设置文字上下padding,默认3.5dp,mFillTriangle为true时无效-->
+        <attr name="lv_padding" format="dimension"/>
+        <!-- 设置LabelView方向 -->
+        <attr name="lv_gravity" format="enum">
+            <enum name="TOP_LEFT" value="51"/>
+            <enum name="TOP_RIGHT" value="53"/>
+            <enum name="BOTTOM_LEFT" value="83"/>
+            <enum name="BOTTOM_RIGHT" value="85"/>
+        </attr>
+        <!-- 设置是否填充三角区域,默认false -->
+        <attr name="lv_fill_triangle" format="boolean"/>
+    </declare-styleable>
+    
+    <declare-styleable name="TvTabHost">
+        <attr name="cursorRes" format="reference" />
+        <attr name="textColorDefault" format="color" />
+        <attr name="textColorSelected" format="color" />
+        <attr name="titleWidth" format="dimension"></attr>
+        <attr name="titleHeight" format="dimension"></attr>
+        <attr name="titleSpace" format="dimension"></attr>
+        <attr name="dividerHeight" format="dimension"></attr>
+        <attr name="durationScroll" format="integer"></attr>
+        <attr name="scalable" format="boolean"></attr>
+        <attr name="scale" format="float"></attr>
+        <attr name="animationType">
+            <enum name="DEFAULT" value="0"></enum>
+            <enum name="TRANSLATE" value="1"></enum>
+        </attr>
+        <attr name="durationLarge" format="integer"></attr>
+        <attr name="durationSmall" format="integer"></attr>
+        <attr name="delay" format="integer" />
+        <attr name="cursorWidth" format="dimension"></attr>
+        <attr name="cursorHeight" format="dimension"></attr>
+        <attr name="cursorMarginLeft" format="dimension"></attr>
+        <attr name="cursorMarginTop" format="dimension"></attr>
+        <attr name="cursorMarginRight" format="dimension"></attr>
+        <attr name="cursorMarginBottom" format="dimension"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="MagicTextView">
+        <attr name="innerShadowColor" format="color"/>
+        <attr name="innerShadowRadius" format="dimension"/>
+        <attr name="innerShadowDx" format="dimension"/>
+        <attr name="innerShadowDy" format="dimension"/>
+
+        <attr name="outerShadowColor" format="color"/>
+        <attr name="outerShadowRadius" format="dimension"/>
+        <attr name="outerShadowDx" format="dimension"/>
+        <attr name="outerShadowDy" format="dimension"/>
+
+        <attr name="typeface" format="string" />
+
+        <attr name="foreground" format="reference|color"/>
+        <attr name="magictextbackground" format="reference|color"/>
+
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="strokeMiter" format="dimension" />
+        <attr name="strokeColor" format="color" />
+        <attr name="strokeJoinStyle">
+            <enum name="miter" value="0" />
+            <enum name="bevel" value="1" />
+            <enum name="round" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundProgressBar">
+        <attr name="roundColor" format="color" />
+        <attr name="roundProgressColor" format="color" />
+        <attr name="roundWidth" format="dimension"></attr>
+        <attr name="max" format="integer"></attr>
+        <attr name="style">
+            <enum name="STROKE" value="0"></enum>
+            <enum name="FILL" value="1"></enum>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SlidingMenu">
+        <attr name="mode">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="viewAbove" format="reference" />
+        <attr name="viewBehind" format="reference" />
+        <attr name="behindOffset" format="dimension" />
+        <attr name="behindWidth" format="dimension" />
+        <attr name="behindScrollScale" format="float" />
+        <attr name="touchModeAbove">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+        </attr>
+        <attr name="touchModeBehind">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+        </attr>
+        <attr name="shadowDrawable" format="reference" />
+        <attr name="shadowWidth" format="dimension" />
+        <attr name="fadeEnabled" format="boolean" />
+        <attr name="fadeDegree" format="float" />
+        <attr name="selectorEnabled" format="boolean" />
+        <attr name="selectorDrawable" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="ScrollBar">
+        <attr name="scrolBarDrawable" format="reference" />
+        <attr name="scrolBarBackgroundDrawable" format="reference" />
+        <attr name="scrolBarMode">
+            <enum name="point" value="0"></enum>
+            <enum name="bar" value="1"></enum>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="myviewpager">
+        <attr name="skip_left_right" format="boolean" />
+    </declare-styleable>
+
+    <!-- Defines the custom XML attributes supported for a HorizontalListView -->
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="android:divider" />
+        <attr name="android:requiresFadingEdge" />
+        <attr name="android:fadingEdgeLength" />
+    </declare-styleable>
+
+    <declare-styleable name="TextViewMetroView">
+        <attr name="android:src" />
+        <attr name="shadowingbackgroundwidth" format="dimension"/>
+        <attr name="shadowingbackgroundHeight" format="dimension"/>
+        <attr name="shadowingbottom" format="dimension"/>
+        <attr name="shadowingleft" format="dimension"/>
+        <attr name="shadowingright" format="dimension"/>
+        <attr name="shadowingtop" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="ScrollView">
+        <attr name="offset" format="dimension"/>
+        <attr name="ischange" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="MetroGridView">
+        <attr name="numColumns" format="integer"/>
+        <attr name="itemWidth" format="dimension"/>
+        <attr name="itemHeight" format="dimension"/>
+        <attr name="itemSpaceTop" format="dimension"/>
+        <attr name="itemSpaceLeft" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="FancyCoverFlow">
+        <attr name="unselectedAlpha" format="float"/>
+        <attr name="unselectedSaturation" format="float"/>
+        <attr name="unselectedScale" format="float"/>
+        <attr name="maxRotation" format="integer"/>
+        <attr name="scaleDownGravity" format="float"/>
+        <attr name="actionDistance" format="integer">
+            <enum name="auto" value="2147483647" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SubsamplingScaleImageView">
+        <attr name="src" format="reference" />
+        <attr name="assetName" format="string" />
+        <attr name="panEnabled" format="boolean" />
+        <attr name="zoomEnabled" format="boolean" />
+        <attr name="quickScaleEnabled" format="boolean" />
+        <attr name="tileBackgroundColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="floatTextProgressBar">
+        <attr name="triangleColor" format="reference|color" />
+        <attr name="rectWidth" format="dimension|reference" />
+        <attr name="rectHeight" format="dimension|reference" />
+        <attr name="rectColor" format="reference|color" />
+        <attr name="fillColor" format="reference|color" />
+        <attr name="progress" format="integer" />
+        <attr name="backgroundColor" format="reference|color" />
+        <attr name="floatTextColor" format="reference|color" />
+        <attr name="floatTextSize" format="dimension|reference"/>
+        <attr name="progressHeight" format="dimension|reference"/>
+        <attr name="triangleHeight" format="dimension|reference" />
+    </declare-styleable>
+    <declare-styleable name="MetroView">
+        <attr name="android:src"/>
+        <attr name="shadowingWidth" format="dimension"/>
+        <attr name="topShadowingWidth" format="dimension"/>
+        <attr name="bottomShadowingWidth" format="dimension"/>
+        <attr name="leftShadowingWidth" format="dimension"/>
+        <attr name="rightShadowingWidth" format="dimension"/>
+        <attr name="imagetype" format="string"/>
+        <attr name="bgcolor" format="color"/>
+        <attr name="hasAnim" format="boolean"/>
+        <attr name="isChildSelected" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="HorizonGridViewPager">
+        <attr name="columnWidth" format="reference|dimension"/>
+        <attr name="horizontalSpacing" format="reference|dimension"/>
+        <attr name="numCols" format="integer"/>
+        <attr name="numRows" format="integer"/>
+        <attr name="verticalSpacing" format="reference|dimension"/>
+    </declare-styleable>
+
+</resources>

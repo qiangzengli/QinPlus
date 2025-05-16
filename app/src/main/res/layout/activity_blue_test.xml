@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context="com.weiyin.qinplus.activity.BlueTestActivity">
+    <TextView
+        android:id="@+id/blue_test_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginTop="60dp"
+        android:textSize="60dp"
+        android:textColor="@color/white"
+        />
+    <SeekBar
+        android:id="@+id/blue_test_progressBar"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/video_progress_bg"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:focusable="false"
+        android:minHeight="20dp"
+        android:maxHeight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        android:thumb="@null"
+        />
+</RelativeLayout>

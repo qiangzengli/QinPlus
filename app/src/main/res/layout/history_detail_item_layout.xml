@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170px">
+
+    <RelativeLayout
+        android:id="@+id/musicHistoryDetailItemLayout"
+        android:layout_width="450px"
+        android:layout_height="170px"
+        android:background="@drawable/history_item_selector">
+
+        <TextView
+            android:id="@+id/historyItemScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40px"
+            android:layout_marginTop="30px"
+            android:textColor="@color/colorD0021B"
+            android:textSize="36px" />
+
+        <LinearLayout
+            android:id="@+id/historyItemLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/historyItemScore"
+            android:layout_marginLeft="40px"
+            android:layout_marginTop="20px"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/historyDetailItemLayoutStyle"
+                android:text="音准" />
+
+            <TextView
+                android:id="@+id/historyItemIntonation"
+                style="@style/historyDetailItemLayoutStyle" />
+
+            <TextView
+                style="@style/historyDetailItemLayoutStyle"
+                android:text="+节奏" />
+
+            <TextView
+                android:id="@+id/historyItemRhythm"
+                style="@style/historyDetailItemLayoutStyle" />
+
+            <TextView
+                style="@style/historyDetailItemLayoutStyle"
+                android:text="+力度" />
+
+            <TextView
+                android:id="@+id/historyItemIntensity"
+                style="@style/historyDetailItemLayoutStyle" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/ww_hw"
+            android:layout_below="@id/historyItemLinearLayout"
+            android:layout_marginLeft="40px"
+            android:text="（音准50%＋节奏30%＋力度20%＝总得分）"
+            android:textColor="@color/main_title_bg"
+            android:textSize="10px" />
+
+        <ImageView
+            android:id="@+id/music_history_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40px"
+            android:layout_marginTop="82px"
+            android:layout_toRightOf="@id/historyItemLinearLayout"
+            android:src="@drawable/music_history_date" />
+
+        <TextView
+            android:id="@+id/historyItemPlayLong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14px"
+            android:layout_marginTop="82px"
+            android:layout_toRightOf="@id/music_history_date"
+            android:textColor="@color/main_title_bg"
+            android:textSize="24px" />
+
+        <TextView
+            android:id="@+id/historyItemStartTime"
+            style="@style/historyDetailItemLayoutStyle"
+            android:layout_below="@id/historyItemPlayLong"
+            android:layout_marginLeft="284px"
+            android:layout_marginTop="11px" />
+
+        <View
+            android:layout_width="442px"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10px"
+            android:background="@color/main_title_bg" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="433px"
+        android:src="@drawable/history_time" />
+
+    <TextView
+        android:id="@+id/historyItemStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="30px"
+        android:layout_toRightOf="@id/musicHistoryDetailItemLayout"
+        android:textColor="@color/main_title_bg"
+        android:textSize="24px" />
+</RelativeLayout>

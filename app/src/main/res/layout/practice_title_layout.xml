@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/practice1TextView"
+        android:layout_width="97px"
+        android:layout_height="150px"
+        android:layout_marginTop="40px"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="24px"
+        android:background="@drawable/relatertextview_bg"
+        />
+    <RelativeLayout
+        android:id="@+id/practiceLayoutTitleRl"
+        android:layout_width="770px"
+        android:layout_height="150px"
+        android:layout_marginLeft="127px"
+        android:layout_marginRight="127px"
+        android:layout_marginTop="40px"
+        android:background="@drawable/textview_bg"
+        >
+        <TextView
+            android:id="@+id/practice1LayoutContentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            android:textSize="16px"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
+</RelativeLayout>

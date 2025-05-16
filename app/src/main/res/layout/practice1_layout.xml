@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/practice1LayoutTitleRl"
+        layout="@layout/practice_title_layout"
+        />
+    <include
+        layout="@layout/practice_skip_layout"/>
+    <RelativeLayout
+        android:id="@+id/practice1Rl1"
+        android:layout_width="252px"
+        android:layout_height="252px"
+        android:layout_below="@id/practice1LayoutTitleRl"
+        android:layout_marginTop="84px"
+        android:layout_marginLeft="222px"
+        android:background="@drawable/practice_select_bg"
+        >
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/practice1Rl1ImageView"
+        android:layout_width="252px"
+        android:layout_height="252px"
+        android:layout_below="@id/practice1LayoutTitleRl"
+        android:layout_marginTop="84px"
+        android:layout_marginLeft="222px"
+        android:scaleType="fitCenter"
+        />
+
+    <RelativeLayout
+        android:id="@+id/practice1Rl2"
+        android:layout_width="252px"
+        android:layout_height="252px"
+        android:layout_below="@id/practice1LayoutTitleRl"
+        android:layout_toRightOf="@id/practice1Rl1"
+        android:layout_marginTop="84px"
+        android:layout_marginLeft="76px"
+        android:background="@drawable/practice_select_bg"
+        >
+
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/practice1Rl2ImageView"
+        android:layout_width="252px"
+        android:layout_height="252px"
+        android:layout_below="@id/practice1LayoutTitleRl"
+        android:layout_toRightOf="@id/practice1Rl1"
+        android:layout_marginTop="84px"
+        android:layout_marginLeft="76px"
+        android:scaleType="fitCenter"
+        />
+</RelativeLayout>

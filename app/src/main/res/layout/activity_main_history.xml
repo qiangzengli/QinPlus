@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_history"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.weiyin.qinplus.activity.MainHistoryActivity">
+
+
+    <LinearLayout
+        android:id="@+id/activity_main_history_title_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:layout_marginTop="64px"
+        android:background="@color/title_background"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/activity_main_history_onetab_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/activity_main_history_onetab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="经典教程"
+                android:textColor="@color/colorWhite"
+                android:textSize="16px" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/activity_main_history_twotab_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/activity_main_history_twotab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:text="流行音乐"
+                android:textColor="@color/colorWhite"
+                android:textSize="16px" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/activity_main_history_threetab_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/activity_main_history_threetab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:text="考级专区"
+                android:textColor="@color/colorWhite"
+                android:textSize="16px" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_history_activity_back_rl"
+        android:layout_width="match_parent"
+        android:layout_height="67px"
+        android:background="@drawable/main_title_bg">
+
+        <RelativeLayout
+            android:id="@+id/main_history_activity_back_Rl"
+            android:layout_width="75px"
+            android:layout_marginLeft="20px"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/main_history_activity_back_imageview"
+                android:layout_width="25px"
+                android:layout_height="25px"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="最近弹奏"
+            android:textColor="@color/main_title_bg"
+            android:textSize="24px" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/mainHistoryNo"
+        style="@style/wm_hm"
+        android:layout_below="@id/activity_main_history_title_linearlayout"
+        android:src="@drawable/music_history_no"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/activity_main_history_iv_sboard_detail_tabline"
+        android:layout_width="33px"
+        android:layout_height="3px"
+        android:layout_below="@id/activity_main_history_title_linearlayout"
+        android:background="@color/ffD100"
+        android:contentDescription="tab" />
+
+    <com.weiyin.qinplus.ui.tv.view.recyclerview.CustomRecyclerView
+        android:id="@+id/activity_main_history_customrecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_main_history_title_linearlayout"
+        android:paddingBottom="129px" />
+</RelativeLayout>

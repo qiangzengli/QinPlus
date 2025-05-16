@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loadingdialog_layout"
+    android:layout_width="700px"
+    android:layout_height="500px"
+    android:background="@color/music_detail_bg"
+    >
+
+    <ImageView
+        android:id="@+id/loadingdialog_imageview_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160px"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/loadingdialog_textiview_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/loadingdialog_imageview_loading"
+        android:layout_marginTop="123px"
+        android:textColor="@color/white"
+        android:textSize="24px"
+        />
+</RelativeLayout>

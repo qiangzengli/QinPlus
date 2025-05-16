@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activityStartLoginLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.weiyin.qinplus.activity.StartLoginActivity">
+
+    <TextView
+        android:id="@+id/activityStartLoginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80px"
+        android:text="登录"
+        android:textColor="@color/main_title_bg"
+        android:textSize="30px" />
+
+    <LinearLayout
+        android:id="@+id/activityStartLoginLlPhone"
+        android:layout_width="300px"
+        android:layout_height="40px"
+        android:layout_below="@id/activityStartLoginTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40px"
+        android:background="@drawable/login_edit_shape"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/supportedCountriesTvLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/supportedCountriesTv"
+                android:layout_width="50px"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="+86"
+                android:textColor="@color/main_title_bg"
+                android:textSize="18px" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/phone_bg" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/activityStartLoginEdPhone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/login_phone_hint"
+            android:inputType="number"
+            android:paddingLeft="14px"
+            android:textColor="@color/main_title_bg"
+            android:textSize="18px" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/activityStartLoginSubject"
+        android:layout_width="300px"
+        android:layout_height="40px"
+        android:layout_below="@id/activityStartLoginLlPhone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40px"
+        android:background="@drawable/login_text_bg"
+        android:gravity="center"
+        android:text="提交"
+        android:textColor="@color/main_title_bg"
+        android:textSize="18px" />
+</RelativeLayout>

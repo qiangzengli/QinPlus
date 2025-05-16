@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/practiceDialogLayout"
+    android:layout_width="700px"
+    android:layout_height="500px"
+    android:background="@color/music_detail_bg"
+    >
+    <ImageView
+        android:id="@+id/practiceDialogLayoutImageView"
+        android:layout_width="600px"
+        android:layout_height="265px"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:layout_marginTop="36px"
+        android:scaleType="fitCenter"
+        />
+    <TextView
+        android:id="@+id/practiceDialogLayoutTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30px"
+        android:textColor="@color/white"
+        android:layout_marginLeft="128px"
+        android:layout_marginTop="90px"
+        android:layout_below="@id/practiceDialogLayoutImageView"
+        />
+    <TextView
+        android:id="@+id/practiceDialogLayoutTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30px"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="128px"
+        android:layout_marginTop="90px"
+        android:layout_below="@id/practiceDialogLayoutImageView"
+        />
+
+</RelativeLayout>

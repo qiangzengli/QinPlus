@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:id="@+id/main_bellow_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/title_background"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/main_classical_music_Rl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/main_classical_music_imageView"
+                style="@style/mainImageViewStyle"
+                android:src="@drawable/musicinput_f" />
+
+            <TextView
+                android:id="@+id/main_classical_music_textView"
+                style="@style/colorWhiteTextView12"
+                android:layout_below="@id/main_classical_music_imageView"
+                android:text="曲谱分类  " />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_pop_music_Rl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/main_pop_music_imageView"
+                style="@style/mainImageViewStyle"
+                android:src="@drawable/main_pop_music_bg" />
+
+            <TextView
+                android:id="@+id/main_pop_music_textView"
+                style="@style/colorWhiteTextView12"
+                android:layout_below="@id/main_pop_music_imageView"
+                android:text="视频教学" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_test_area_Rl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/main_test_area_imageView"
+                style="@style/mainImageViewStyle"
+                android:src="@drawable/main_test_area_bg" />
+
+            <TextView
+                android:id="@+id/main_test_area_textView"
+                style="@style/colorWhiteTextView12"
+                android:layout_below="@id/main_test_area_imageView"
+                android:text="音乐教室" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_search_Rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/main_search_imageView"
+                style="@style/mainImageViewStyle"
+                android:src="@drawable/main_seach_bg" />
+
+            <TextView
+                android:id="@+id/main_search_textView"
+                style="@style/colorWhiteTextView12"
+                android:layout_below="@id/main_search_imageView"
+                android:text="搜索" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_personal_center_Rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/main_personal_center_imageView"
+                style="@style/mainImageViewStyle"
+                android:src="@drawable/main_personal_center_bg" />
+
+            <TextView
+                android:id="@+id/main_personal_center_textView"
+                style="@style/colorWhiteTextView12"
+                android:layout_below="@id/main_personal_center_imageView"
+                android:text="个人中心" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.weiyin.qinplus.activity.CannotSlidingViewpager
+        android:id="@+id/activity_main_viewpager_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/main_bellow_linearLayout"
+        android:layout_marginTop="64px">
+
+    </com.weiyin.qinplus.activity.CannotSlidingViewpager>
+
+    <RelativeLayout
+        android:id="@+id/main_title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="67px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/main_title_bg">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:src="@drawable/disconnected"
+            android:id="@+id/img_connect"
+
+            android:layout_width="30px"
+            android:layout_height="30px"
+
+            android:layout_marginLeft="22px"/>
+
+
+        <TextView
+            android:id="@+id/main_title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="经典曲谱"
+            android:textColor="@color/main_title_bg"
+            android:textSize="24px" />
+
+        <ImageView
+            android:id="@+id/main_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/main_title_textView"
+            android:src="@drawable/drop_down" />
+
+        <TextView
+            android:id="@+id/main_history_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40px"
+            android:text="最近弹奏"
+            android:textColor="@color/main_title_bg"
+            android:textSize="22px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_drop_down_rl"
+        android:layout_width="181px"
+        android:layout_height="133px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54px"
+        android:background="@drawable/main_drop_down_bg"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/main_drop_down_textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24px"
+            android:layout_marginTop="24px"
+            android:textColor="@color/main_title_bg"
+            android:textSize="24px" />
+
+        <TextView
+            android:id="@+id/main_drop_down_textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_drop_down_textView1"
+            android:layout_marginLeft="24px"
+            android:layout_marginTop="24px"
+            android:textColor="@color/main_title_bg"
+            android:textSize="24px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_classical_button_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/main_title_rl"
+        android:background="@color/colorWhite"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/fragment_classical_imageView_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="227px"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/fragment_classical_imageView_loadfault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150px"
+            android:src="@drawable/loadfault" />
+
+        <TextView
+            android:id="@+id/fragment_classical_textView_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="448px"
+            android:text="加载中 . . . . . ."
+            android:textColor="@color/peludeview_bg"
+            android:textSize="24px"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/fragment_classical_imageView_loadFault_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="448px">
+
+            <TextView
+                android:id="@+id/fragment_classical_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击"
+                android:textColor="@color/main_title_bg"
+                android:textSize="24px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:layout_toRightOf="@id/fragment_classical_button"
+                android:text="重新加载"
+                android:textColor="@color/ffD100"
+                android:textSize="24px" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
+

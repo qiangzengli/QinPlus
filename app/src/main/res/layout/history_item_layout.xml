@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mycollection_item_rl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="64px"
+    android:layout_marginTop="60px">
+    <ImageView
+        android:id="@+id/mycollection_item_imageview"
+        android:layout_width="135px"
+        android:layout_height="191px"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/mycollection_item_textview"
+        android:layout_width="40px"
+        android:layout_height="191px"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@id/mycollection_item_imageview"
+        android:background="@color/textview_bg"
+        android:ems="1"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="-5dp"
+        android:maxLength="11"
+        android:maxLines="11"
+        android:paddingBottom="8px"
+        android:paddingLeft="12px"
+        android:paddingRight="12px"
+        android:paddingTop="8px"
+        android:text="亚麻色头发的少女亚麻色头发的少女"
+        android:textColor="@color/colorWhite"
+        android:textSize="16px" />
+    <RelativeLayout
+        android:layout_width="80px"
+        android:layout_height="93px"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/history_num_bg"
+        >
+        <TextView
+            android:id="@+id/history_item_textView"
+            android:layout_width="65px"
+            android:layout_height="50px"
+            android:layout_marginTop="5px"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="36px" />
+    </RelativeLayout>
+</RelativeLayout>

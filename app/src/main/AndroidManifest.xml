@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+    <!-- 在sdcard中创建/删除文件的权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往sdcard中写入数据的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <uses-permission-sdk-23 android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <uses-feature android:name="android.hardware.usb.host" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <application
+        android:name=".application.WinYinPianoApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" />
+        <!-- 启动页 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.weiyin.qinplus.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <activity
+            android:name=".activity.StartingActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!-- 通过AndroidManifest配置AppKey和AppSecret，如果你选择通过代码配置，则不需要配置以下meta-data -->
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="1f8fdd16eaacf" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="df6b5cabb5804b056b5df9a76c576837" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="587c69205312dd1ce9001452" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="LetvPiano" />
+
+        <activity
+            android:name=".activity.MusicDetailActivity"
+            android:screenOrientation="landscape" />
+
+        <service
+            android:name=".bluetooth.BluetoothLeService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".activity.OpernActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.ScoreActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.MusicRelatedActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.MyCollectionActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.MainHistoryActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.HelpActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.AboutAppActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activity.BlueTestActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.PracticeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.VideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.StartLoginActivity"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- LAUNCHER -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.StartUserActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.StartVerificationActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.MusicHistoryDetailActivity"
+            android:screenOrientation="landscape" />
+
+    </application>
+</manifest>

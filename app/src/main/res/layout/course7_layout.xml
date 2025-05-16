@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/course7LayoutTitleRl"
+        layout="@layout/course_content_layout"/>
+    <ImageView
+        android:id="@+id/course7LayoutImageView"
+        android:layout_width="770px"
+        android:layout_height="420px"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="54px"
+        android:layout_below="@id/course7LayoutTitleRl"
+        android:layout_centerHorizontal="true"
+        />
+    <include layout="@layout/course_skip_layout"/>
+</RelativeLayout>

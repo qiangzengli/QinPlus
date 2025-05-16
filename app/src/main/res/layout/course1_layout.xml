@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/course1LayoutTitleRl"
+        layout="@layout/course_content_layout"/>
+
+    <RelativeLayout
+        android:layout_width="770px"
+        android:layout_height="420px"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/course1LayoutTitleRl"
+        android:layout_marginTop="54px"
+        >
+
+        <ImageView
+            android:id="@+id/course1LayoutImageView"
+            android:layout_width="770px"
+            android:layout_height="420px"
+            android:scaleType="fitCenter"
+            />
+        <RelativeLayout
+            android:layout_width="48px"
+            android:layout_height="60px"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            >
+            <ImageView
+                android:id="@+id/course1LayoutPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/audio_play"
+                />
+            <com.weiyin.qinplus.ui.tv.view.RoundProgressBar
+                android:id="@+id/course1LayoutProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:roundColor="#C8FFFFFF"
+                app:roundProgressColor="#FFFFD100"
+                app:roundWidth="2dp"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+    <include layout="@layout/course_skip_layout"/>
+</RelativeLayout>

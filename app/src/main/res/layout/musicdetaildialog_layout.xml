@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/musicdetaildialog_layout"
+    android:layout_width="576px"
+    android:layout_height="match_parent"
+    android:background="@color/musicdetail_dialog_bg">
+
+    <RelativeLayout
+        android:id="@+id/musicdetial_dialog_title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="67px"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/musicdetial_dialog_title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="车尔尼作品599钢琴初级练习曲"
+            android:textColor="@color/main_title_bg"
+            android:textSize="24px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="67px">
+
+        <ImageView
+            android:id="@+id/musicdetial_dialog_music_imageview"
+            android:layout_width="135px"
+            android:layout_height="191px"
+            android:layout_marginLeft="25px"
+            android:layout_marginTop="34px" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/musicdetial_dialog_verticalcustomRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25px"
+            android:layout_toRightOf="@id/musicdetial_dialog_music_imageview">
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+</RelativeLayout>

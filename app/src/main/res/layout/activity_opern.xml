@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_opern_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/activity_opern_relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="70px">
+
+        <ImageView
+            android:id="@+id/opern_back"
+            android:layout_width="35px"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/opern_back" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="34px"
+            android:layout_marginRight="34px"
+            android:layout_toRightOf="@id/opern_back"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/opern_practice_Rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <!--练习-->
+                <ImageView
+                    android:id="@+id/opern_practice_img"
+                    style="@style/image_title_style"
+                    android:src="@drawable/opern_practice_play" />
+
+                <TextView
+                    android:id="@+id/opern_practice_text"
+                    style="@style/text_title_style"
+                    android:text="@string/practice" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/opern_projectile_Rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <!--弹对前进-->
+                <ImageView
+                    android:id="@+id/opern_projectile_img"
+                    style="@style/image_title_style"
+                    android:src="@drawable/projectile_o" />
+
+                <TextView
+                    android:id="@+id/opern_projectile_text"
+                    style="@style/text_title_style"
+                    android:text="@string/projectile" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/opern_demonstration_Rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <!--示范-->
+                <ImageView
+                    android:id="@+id/opern_demonstration_img"
+                    style="@style/image_title_style"
+                    android:src="@drawable/oper_play_o" />
+
+                <TextView
+                    android:id="@+id/opern_play_text"
+                    style="@style/text_title_style"
+                    android:text="@string/demonstration" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/opern_restart_Rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <!--重新开始-->
+                <ImageView
+                    android:id="@+id/opern_restart_img"
+                    style="@style/image_title_style"
+                    android:src="@drawable/restart_o" />
+
+                <TextView
+                    android:id="@+id/opern_restart_text"
+                    style="@style/text_title_style"
+                    android:text="@string/restart" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/opern_speed_size_Rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <!--变速-->
+                <TextView
+                    android:id="@+id/opern_speed_size_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6px"
+                    android:focusable="true"
+                    android:text="@string/yuansu"
+                    android:textColor="@color/white"
+                    android:textSize="24px" />
+
+                <ImageView
+                    android:id="@+id/opern_xian_img"
+                    android:layout_width="55px"
+                    android:layout_height="2px"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="44px"
+                    android:background="@color/colorWhite" />
+
+                <TextView
+                    android:id="@+id/opern_play_speed_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="48px"
+                    android:text="@string/play_speed"
+                    android:textColor="@color/Selected"
+                    android:textSize="12px" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/opern_metronome_Rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <!--节拍-->
+                <ImageView
+                    android:id="@+id/opern_metronome_img"
+                    style="@style/image_title_style"
+                    android:src="@drawable/open_metronome_o" />
+
+                <TextView
+                    android:id="@+id/opern_metronome_text"
+                    style="@style/text_title_style"
+                    android:text="@string/metronome" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/opern_waterfall_flow_Rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <!--瀑布流-->
+                <ImageView
+                    android:id="@+id/opern_waterfall_flow_img"
+                    style="@style/image_title_style"
+                    android:src="@drawable/waterfall_flow_o" />
+
+                <TextView
+                    android:id="@+id/opern_waterfall_flow_text"
+                    style="@style/text_title_style"
+                    android:text="@string/waterfall_flow" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/opern_accompaniment_Rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <!--伴奏-->
+                <ImageView
+                    android:id="@+id/opern_accompaniment_img"
+                    style="@style/image_title_style"
+                    android:src="@drawable/accompaniment_opening_o" />
+
+                <TextView
+                    android:id="@+id/opern_accompaniment_text"
+                    style="@style/text_title_style"
+                    android:text="@string/accompaniment" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/opern_connect_Rl"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <!--连接-->
+                <ImageView
+                    android:id="@+id/opern_connect_img"
+                    style="@style/image_title_style"
+                    android:src="@drawable/connect" />
+
+                <TextView
+                    android:id="@+id/opern_connect_text"
+                    style="@style/text_title_style"
+                    android:text="@string/connect" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <!--曲谱-->
+    <RelativeLayout
+        android:id="@+id/opern_activity_frame"
+        android:layout_width="1024px"
+        android:layout_height="590px"
+        android:layout_below="@id/activity_opern_relativelayout">
+
+        <RelativeLayout
+            android:id="@+id/opern_activity_main_frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="590px" />
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/opern_keyboard_playsong_scrollew"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_opern_relativelayout"
+        android:fadingEdgeLength="0.0dip"
+        android:fillViewport="true"
+        android:overScrollMode="always"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.weiyin.qinplus.ui.tv.waterfall.WaterFallSurfaceView
+                    android:id="@+id/opern_waterfall"
+                    android:layout_width="1024px"
+                    android:layout_height="590px" />
+
+                <com.weiyin.qinplus.ui.tv.waterfall.KeyBoard
+                    android:id="@+id/opern_keyboard_playsong"
+                    android:layout_width="1024px"
+                    android:layout_height="108px"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <!--曲谱-->
+    <RelativeLayout
+        android:id="@+id/opernOntouchRl"
+        android:layout_width="1024px"
+        android:layout_height="590px"
+        android:layout_alignTop="@+id/opern_activity_frame"
+        android:layout_toEndOf="@+id/opern_guiDeRl"></RelativeLayout>
+
+    <!--</HorizontalScrollView>-->
+    <RelativeLayout
+        android:id="@+id/opern_guiDeRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

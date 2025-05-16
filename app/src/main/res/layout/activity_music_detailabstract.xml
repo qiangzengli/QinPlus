@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_music_detailabstract"
+    android:layout_width="700px"
+    android:layout_height="500px"
+    android:background="@color/music_detail_bg"
+    >
+
+    <TextView
+        android:id="@+id/musicdetialabstract_dialog_title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30px"
+        android:text="曲目介绍"
+        android:textSize="24px"
+        android:textColor="@color/colorWhite"
+        />
+    <ScrollView
+        android:layout_below="@id/musicdetialabstract_dialog_title_textview"
+        android:layout_marginTop="40px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="74px"
+                android:text="作者介绍："
+                android:textColor="@color/colorWhite"
+                android:textSize="16px"/>
+
+            <TextView
+                android:id="@+id/activity_musicdetailabstract_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="74px"
+                android:layout_marginTop="10px"
+                android:layout_marginRight="74px"
+                android:ellipsize="end"
+                android:textColor="@color/pdf_bg"
+                android:textSize="16px"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="74px"
+                android:layout_marginTop="30px"
+                android:text="曲目介绍："
+                android:textColor="@color/colorWhite"
+                android:textSize="16px"/>
+
+            <TextView
+                android:id="@+id/activity_musicdetailabstract_musicintroduce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="74px"
+                android:layout_marginTop="10px"
+                android:layout_marginRight="74px"
+                android:ellipsize="end"
+                android:textColor="@color/pdf_bg"
+                android:textSize="16px"
+                />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

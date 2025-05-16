@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/connectDialogMainLayout"
+    android:layout_width="130px"
+    android:layout_height="114px"
+    android:background="@drawable/bg_connect_dialog">
+
+    <RelativeLayout
+        android:id="@+id/connectBlueRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26px">
+
+        <ImageView
+            android:id="@+id/connectBlueImageView"
+            android:layout_width="28px"
+            android:layout_height="28px"
+            android:layout_marginLeft="16px"
+            android:src="@drawable/bluetooth_connected" />
+
+        <TextView
+            android:id="@+id/connectBlueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7px"
+            android:layout_toRightOf="@id/connectBlueImageView"
+            android:text="@string/blueConnect"
+            android:textColor="#4A4A4A"
+            android:textSize="12px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/connectUsbRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/connectBlueRl"
+        android:layout_marginTop="16px">
+
+        <ImageView
+            android:id="@+id/connectUsbImageView"
+            android:layout_width="28px"
+            android:layout_height="28px"
+            android:layout_marginLeft="16px"
+            android:src="@drawable/usb_connected" />
+
+        <TextView
+            android:id="@+id/connectUsbTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7px"
+            android:layout_toRightOf="@id/connectUsbImageView"
+            android:text="@string/usbConnect"
+            android:textColor="#4A4A4A"
+            android:textSize="12px" />
+    </RelativeLayout>
+</RelativeLayout>

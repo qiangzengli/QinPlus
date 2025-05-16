@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_dialog_rl"
+    android:layout_width="700px"
+    android:layout_height="500px"
+    android:background="@color/music_detail_bg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55px"
+        android:text="@string/discovery_update"
+        android:textColor="@color/white"
+        android:textSize="18px"
+        />
+    <TextView
+        android:id="@+id/loginDialogContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16px"
+        android:layout_marginTop="100px"
+        android:layout_marginLeft="200px"
+        android:textColor="@color/white"
+        />
+    <TextView
+        android:id="@+id/loginDialogCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:textSize="16px"
+        android:textColor="@color/white"
+        android:layout_marginTop="400px"
+        android:layout_marginLeft="200px"
+        />
+    <TextView
+        android:id="@+id/loginDialogOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Confirm"
+        android:textSize="16px"
+        android:textColor="@color/white"
+        android:layout_marginTop="400px"
+        android:layout_marginRight="200px"
+        android:layout_alignParentRight="true"
+        />
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white_50">#7fffffff</color>
+    <color name="atransparent">#7f000000</color><!--透明色 -->
+    <color name="white">#FFFFFF</color><!--白色 -->
+    <color name="red">#FF0000</color><!--红色 -->
+    <color name="Selected">#99ffffff</color>
+    <color name="Unchecked">#FF8ffbd8</color>
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="main_text_green">#8FFBD8</color>
+    <color name="main_background_blue">#E51c324A</color>
+    <color name="title_background">#4B000000</color>
+    <color name="webview_bg">#26374A</color>
+    <color name="ffD100">#FFFFD100</color>
+    <color name="f7D100">#7FFFD100</color>
+    <color name="main_title_bg">#FF4A4A4A</color>
+    <color name="prompt_bg">#0CB872</color>
+    <color name="select_o">#00FFFFFF</color>
+    <color name="musicdetail_dialog_bg">#B2000000</color>
+    <color name="textview_bg">#4C000000</color>
+    <color name="score_bg">#4CFFFFFF</color>
+
+    <color name="peludeview_bg">#CC000000</color>
+    <!--百分之70透明度白色-->
+    <color name="pdf_bg">#AFFFFFFF</color>
+
+    <color name="music_detail_bg">#AF000000</color>
+    <color name="navpage">#00FFFFFF</color>
+
+    <color name="blackKey">#FF000000</color>
+    <!--60-->
+
+    <color name="title_backgroundFF">#FF867EDC</color>
+    <color name="main_bg">#FFD7D3FC</color>
+    <color name="start_text_bg">#FF9B9B9B</color>
+
+    <color name="buttonColor">#FF867EDC</color>
+    <color name="colorF9BF38">#FFF9BF38</color>
+    <color name="color379B">#FF379BFF</color>
+    <color name="color7f379b">#7F379BFF</color>
+    <color name="colorE2E2E2">#FFE2E2E2</color>
+    <color name="colorBDBDC3">#FFBDBDC3</color>
+    <color name="color313131">#FF313131</color>
+    <color name="colorF3F3F3">#FFF3F3F3</color>
+    <color name="colorD0021B">#FFD0021B</color>
+    <color name="colorCCCCCC">#FFCCCCCC</color>
+    <color name="color23CDE7">#FF23CDE7</color>
+    <color name="colorF7F7F7">#FFF7F7F7</color>
+</resources>

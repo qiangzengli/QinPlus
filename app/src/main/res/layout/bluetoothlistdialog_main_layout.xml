@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bluetoothlistdialog_main_layout"
+    android:layout_width="400px"
+    android:layout_height="280px"
+    android:background="@drawable/bg_blue_dialog"
+    >
+    <TextView
+        android:id="@+id/bluetoothlistdialog_title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="蓝牙"
+        android:layout_centerHorizontal="true"
+        android:textColor="#4a4a4a"
+        android:textSize="24px"
+        />
+    <RelativeLayout
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bluetoothlistdialog_title_textview"
+        android:layout_marginTop="10px"
+        >
+
+    <TextView
+
+        android:text="蓝牙名称"
+        android:id="@+id/bluetooth_textview_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#4a4a4a"
+        android:layout_marginLeft="10px"
+        android:textSize="16px"
+        />
+
+        <TextView
+            android:id="@+id/bluetooth_textview_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="26px"
+            android:text="连接状态"
+            android:textColor="#4a4a4a"
+            android:textSize="16px" />
+
+    <TextView
+        android:id="@+id/bluetooth_seach_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bluetooth_textview_name"
+        android:layout_marginTop="12px"
+        android:layout_marginLeft="10px"
+        android:textColor="#4a4a4a"
+        android:textSize="12px"
+        android:text="选择连接蓝牙设备……"
+        />
+
+    <com.weiyin.qinplus.ui.tv.view.recyclerview.CustomRecyclerView
+        android:id="@+id/bluetoothlistdialog_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bluetooth_seach_textview"
+        android:layout_marginTop="22px"
+        android:layout_marginLeft="10px"
+        android:focusable="true"
+        android:scrollbars="vertical"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        />
+    </RelativeLayout>
+</RelativeLayout>

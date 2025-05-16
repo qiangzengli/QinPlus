@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_music_related"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.weiyin.qinplus.activity.MusicRelatedActivity">
+    <RelativeLayout
+        android:id="@+id/main_related_activity_title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="67px"
+        android:background="@drawable/main_title_bg"
+        >
+        <ImageView
+            android:id="@+id/main_related_activity_back"
+            android:layout_width="25px"
+            android:layout_height="25px"
+            android:src="@drawable/back"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20px"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="相关推荐"
+            android:layout_centerInParent="true"
+            android:textColor="@color/main_title_bg"
+            android:textSize="24px"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_related_activity_name_rl"
+        android:layout_width="464px"
+        android:layout_height="64px"
+        android:layout_marginTop="97px"
+        android:background="@drawable/relatertextview_bg"
+        >
+        <TextView
+            android:id="@+id/main_related_activity_name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40px"
+            android:textSize="24px"
+            android:layout_centerVertical="true"
+            android:text="《亚麻色头发的少女》的相关推荐："
+            />
+    </RelativeLayout>
+
+    <com.weiyin.qinplus.ui.tv.view.recyclerview.CustomRecyclerView
+        android:id="@+id/main_related_activity_customrecyclerview"
+        android:layout_below="@id/main_related_activity_name_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</RelativeLayout>
