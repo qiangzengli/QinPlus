@@ -429,7 +429,6 @@ public class ScoreController implements OnDrawListener, OnPageChangeListener, In
                 midiPlay = new MidiPlay(handler, ScoreController.this);
                 /* 更新页面大小 */
                 double pageWidth = szScore.pageWidth;
-                double pageHeight = szScore.pageHeight;
                 self.measure(0, 0);
                 /* PDF实际宽度除以XML中的宽度 */
                 scoreMarkViewRatioWidth = self.getWidth() / pageWidth;

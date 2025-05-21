@@ -8,21 +8,15 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.hardware.usb.UsbDevice;
-import android.hardware.usb.UsbManager;
-import android.media.midi.MidiDeviceInfo;
-import android.media.midi.MidiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -61,10 +55,6 @@ import com.weiyin.qinplus.usb.listener.UsbConnectListener;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-
-import jp.kshoji.javax.sound.midi.usb.UsbMidiDevice;
 
 /**
  * <pre>
@@ -406,30 +396,6 @@ public class OpernActivity extends BaseActivity implements OnClickListener, UsbC
         bitmap = Constant.readBitMap(this, R.drawable.opern_title_background);
         BitmapDrawable bitmapDrawable = new BitmapDrawable(bitmap);
         rl.setBackground(bitmapDrawable);
-
-
-//        Bitmap bitmap2 = Constant.readBitMap(this, R.drawable.opern_title_background_children);
-//        BitmapDrawable bitmapDrawable2 = new BitmapDrawable(bitmap2);
-
-
-        // Bitmap bitmap = Constant.readBitMap(this, R.drawable.imgtest);
-        // BitmapDrawable bitmapDrawable1 = new BitmapDrawable(bitmap);
-        //bitmapDrawable1.setAlpha(100);
-
-
-//        if (musicBookName.equals("经典儿童钢琴伴奏")) {
-//            ToastUtil.showTextToast(this, "儿童曲目");
-//            //  frameLayoutQuPu.setForeground(bitmapDrawable1);
-//
-//
-//            rl.setBackground(bitmapDrawable2);
-//            imageViewBack.setImageDrawable(getResources().getDrawable(R.drawable.opern_back1));
-//        } else {
-//            rl.setBackground(bitmapDrawable);
-//            imageViewBack.setImageDrawable(getResources().getDrawable(R.drawable.opern_back));
-//        }
-
-        //rl.setBackground(bitmapDrawable);
         imageViewBack.setImageDrawable(getResources().getDrawable(R.drawable.opern_back));
 
 

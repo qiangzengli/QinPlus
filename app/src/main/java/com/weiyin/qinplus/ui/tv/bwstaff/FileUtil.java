@@ -151,9 +151,13 @@ public class FileUtil {
             /* 一次读入一行，直到读入null为文件结束 */
             while ((tempString = reader.readLine()) != null) {
                 if (line != 1) {
+                    // 第一个： 的索引
                     int x = tempString.indexOf(":");
+                    // 第二个 : 的索引
                     int y = tempString.indexOf(":", x + 1);
+                    // 第三个 ： 的索引
                     int z = tempString.indexOf(":", y + 1);
+
                     String strNote = tempString.substring(0, x);
                     String strTime = tempString.substring(x + 1, y);
                     String strDuration = tempString.substring(y + 1, z);

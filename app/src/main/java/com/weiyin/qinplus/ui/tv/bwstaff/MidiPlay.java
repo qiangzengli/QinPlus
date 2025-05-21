@@ -216,46 +216,6 @@ public class MidiPlay {
 
     }
 
-
-//    public void setPadVolumeUsbConn(int usbState){
-//        if(usbState==0){
-//            midiPlayer.setVolume(0f,0f);
-//        }else {
-//            midiPlayer.setVolume(0.8f,0.8f);
-//        }
-//
-//    }
-
-
-//    public void setPadVolumeConnect(boolean blueState,int usbState) {
-//
-//
-//        //蓝牙如果连接  名字包括RealPiano的  pad发声，否则 pad不发生
-//        if (blueState) {
-//
-//            if (scoreController.blueToothcontrol.getmDeviceName().contains("RealPiano")) {
-//
-//                midiPlayer.setVolume(0.8f, 0.8f);
-//            } else {
-//                midiPlayer.setVolume(0f, 0f);
-//            }
-//
-//        } else if(usbState==0){
-//            for (UsbDevice usbdevce:scoreController.getUsbControl().getUsbDevices()) {
-//
-//                usbName=usbdevce.getDeviceName();
-//            }
-//
-//
-//        }else {
-//
-//            //蓝牙没有连接    设置pad发声
-//            midiPlayer.setVolume(0.8f, 0.8f);
-//        }
-//
-//    }
-
-
     public void play() {
 /*currentTempo = 80f;//45f  最小值为64分音符的时间间隔  16 */
         mp3Start = false;
@@ -680,6 +640,7 @@ public class MidiPlay {
         this.midiId = midiId;
         StatusModule statusModule = StatusModule.getStatusModule();
         Log.i("MidiPlay", "midi=" + midiId + "  banzou" + mp3Id);
+        // 是否是示范
         if (statusModule.isDemonstration()) {
             midiPlayer.reset();
             try {
@@ -689,6 +650,7 @@ public class MidiPlay {
                 e.printStackTrace();
             }
         }
+        // 是否是练习
         if (statusModule.isPractice()) {
             midiPlayer.reset();
             try {

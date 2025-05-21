@@ -147,12 +147,23 @@ public class StartVerificationActivity extends BaseActivity implements View.OnCl
             @Override
             public void accept(Object o) throws Exception {
 
-                String code = activityStartVerificationEdPhone.getText().toString();
-                if (StringUtils.isEmpty(code)) {
-                    ToastUtil.showTextToast(StartVerificationActivity.this, getString(R.string.notCode));
-                    return;
-                }
-                registerUser("+86", emailOrPho);
+//                String code = activityStartVerificationEdPhone.getText().toString();
+//                if (StringUtils.isEmpty(code)) {
+//                    ToastUtil.showTextToast(StartVerificationActivity.this, getString(R.string.notCode));
+//                    return;
+//                }
+
+
+                //提交验证码成功
+                LogUtil.i(TAG, "提交验证码成功");
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                String phone= "18790713215";
+                editor.putString(Constant.NICKNAME, phone);
+                editor.putString(Constant.UNION_ID, phone);
+                editor.apply();
+                editor.commit();
+                register("2", phone);
+                //                registerUser("+86", emailOrPho);
 
             }
         });
