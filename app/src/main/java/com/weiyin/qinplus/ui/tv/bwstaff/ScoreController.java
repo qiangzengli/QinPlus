@@ -449,6 +449,7 @@ public class ScoreController implements OnDrawListener, OnPageChangeListener, In
                 imgMeasure = new ImageView(mContext);
                 imgMeasure.setBackgroundResource(R.color.main_background_blue);
                 imgMeasure.setAlpha(0.15f);
+                // 这个就是红色的指针，具体的绘制在 ScorePlayView setMoveSlot()方法中
                 imgSlot = new ImageView(mContext);
                 slotShadowArray.add(imgSlot);
                 scoreMarkView.addView(imgSlot);
@@ -645,12 +646,15 @@ public class ScoreController implements OnDrawListener, OnPageChangeListener, In
      * @param thisMeaNo 小节数
      */
     public void synToTickTimeLine(int thisMeaNo) {
+        // 如果是瀑布流模式，隐藏标记视图，否则的话就可见
         if (statusModule.isWaterfall()) {
             scoreMarkView.setVisibility(View.GONE);
         } else {
             scoreMarkView.setVisibility(View.VISIBLE);
         }
         LogUtil.i(TAG, thisMeaNo + " " + szScore.slot.size());
+
+        // 疑问： slot 到底是什么意思，网上貌似了解不到
         if (thisMeaNo < szScore.slot.size()) {
             int thisMeaTick;
             if (thisMeaNo < szScore.slot.size() - 2) {
@@ -780,8 +784,12 @@ public class ScoreController implements OnDrawListener, OnPageChangeListener, In
 
     public void play() {
         if (isFirst) {
+            // keyNote 的值 不是练习的时候==true
             keyboard.setIsKeyNote(!statusModule.isPractice());
         }
+        // 如果是练习模式
+        // 并且是第一次，初始化 tagEvents,startData;
+        // 如果不是第一次，playData= 当前时间+ playData本身
         if (statusModule.isPractice()) {
             if (isFirst) {
                 tagEvents = new ArrayList<>();
@@ -790,7 +798,10 @@ public class ScoreController implements OnDrawListener, OnPageChangeListener, In
                 playData = System.currentTimeMillis() + playData;
             }
         }
+
+        // reduction 貌似是表示 PDF 手动触摸移动了，就会赋值为true
         if (reduction) {
+            // 如果当前播放的小节>1
             if (currentMeasureNo > 1) {
                 synToTickTimeLine(currentMeasureNo - 2);
             }

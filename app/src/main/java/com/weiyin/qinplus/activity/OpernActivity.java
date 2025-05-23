@@ -722,9 +722,13 @@ public class OpernActivity extends BaseActivity implements OnClickListener, UsbC
 
     private void createBwStaff() {
         bwStaff = new ScoreController(this, dbPath, pdfPath, frameLayoutQuPu, keyBoard, waterFallSurfaceView, activityRl, opernOntouchRl);
+        // 这里的midiJni 没有用到
         bwStaff.setMidiJni(midiJni);
+        // 设置video 路径
         bwStaff.setRecodePath(midiPath + "_recorde");
+        // 设置曲谱id
         bwStaff.setMusicId(opernEntity.musicid);
+        // 从txt 文件中读取 瀑布流数据
         tagWaterFallArrayList = fileUtil.readFileByLinesAudio(opernEntity.getTxtPath());
         bwStaff.initWaterFallSurfaceViewData(tagWaterFallArrayList);
         waterfall();
@@ -732,6 +736,7 @@ public class OpernActivity extends BaseActivity implements OnClickListener, UsbC
         bwStaff.getScorePlayerView().setListener(new ScorePlayerView.InterfaceScoreControllerData() {
             @Override
             public void result(String s) {
+                // 页面元素，状态初始化
                 if (opernEntity != null) {
                     if (s.equals("true")) {
                         statusModule.setPractice(false);

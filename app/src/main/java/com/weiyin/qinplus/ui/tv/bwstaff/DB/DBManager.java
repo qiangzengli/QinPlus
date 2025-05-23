@@ -42,8 +42,7 @@ public class DBManager {
 
 
     public void closeDatabase() {
-        if (database != null)
-        {
+        if (database != null) {
             this.database.close();
             database = null;
         }
@@ -51,6 +50,7 @@ public class DBManager {
             _delegate = null;
 
     }
+
     public DBManager(Context context) {
         this.context = context;
     }
@@ -178,38 +178,46 @@ public class DBManager {
             String query = "SELECT * from NoteOnMessage where name = ?";
             c = database.rawQuery(query, new String[]{"slot-block-amount"});
             if (c.moveToFirst()) {
+                // 获取表中的第7 列，value 值
                 value = c.getInt(7);
                 _delegate.slotBlockAmount(value);
+                // 这里代码貌似存在问题
                 for (int i = 1; i <= value; i++) {
                     String query_select = "select * from NoteOnMessage where id_num = ?";
                     String this_value = String.valueOf(i);
                     c = database.rawQuery(query_select, new String[]{this_value});
                     for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()) {
                         int id_num = c.getInt(0);
+                        // 如果 id_num ==0  ，再次设置 总slot 数量
                         if (id_num == 0) {
                             _delegate.slotBlockAmount(c.getInt(7));
                         } else {
-                            //路程
+                            // 构建当前音符的信息
+                            //路程（tick）
                             int tick = c.getInt(1);
                             //小节号
                             int measuer = c.getInt(3);
-                            //
+                            // 没用到，先忽略含义
                             int staff = c.getInt(4);
-                            //
+                            //音乐中表示声部
                             int voice = c.getInt(5);
+                            // 键值号
                             int noteNum = c.getInt(6);
+                            // 音高
                             int pitch = c.getInt(7);
+                            // 音符的X，通常是时间轴的位置，越靠右越晚
                             int x = c.getInt(8);
+                            // 音符的Y，通常是音高的位置，越靠上，调越高
                             int y = c.getInt(9);
-
+                            // 左右手
                             String handStr = c.getString(10);
                             int hand = 0;
                             if (handStr.equalsIgnoreCase("R")) {
                                 //右手是1 左手为0
                                 hand = 1;
                             }
-                            if(handStr.equalsIgnoreCase("L")){
-                                hand=0;
+                            if (handStr.equalsIgnoreCase("L")) {
+                                hand = 0;
                             }
 
                             _delegate.noteIdNum(id_num, tick, measuer, staff, voice, noteNum, pitch, x, y, hand);
