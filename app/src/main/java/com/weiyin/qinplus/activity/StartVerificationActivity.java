@@ -147,13 +147,14 @@ public class StartVerificationActivity extends BaseActivity implements View.OnCl
             @Override
             public void accept(Object o) throws Exception {
 
-//                String code = activityStartVerificationEdPhone.getText().toString();
+                String code = activityStartVerificationEdPhone.getText().toString();
 //                if (StringUtils.isEmpty(code)) {
 //                    ToastUtil.showTextToast(StartVerificationActivity.this, getString(R.string.notCode));
 //                    return;
 //                }
 
 
+                // 此处先固定为我的手机号，后续需要调整
                 //提交验证码成功
                 LogUtil.i(TAG, "提交验证码成功");
                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -252,12 +253,12 @@ public class StartVerificationActivity extends BaseActivity implements View.OnCl
     private void register(String type, String logName) {
         WinYinPianoApplication.strUid = sharedPreferences.getString(Constant.USER_ID, "");
         try {
-            if ("".equals(WinYinPianoApplication.strUid)) {
-                String uuid = Utils.getMyUUID(this);
-                register(uuid, type, logName);
-            } else {
+//            if ("".equals(WinYinPianoApplication.strUid)) {
+//                String uuid = Utils.getMyUUID(this);
+//                register(uuid, type, logName);
+//            } else {
                 login(logName, type, "1");
-            }
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         }

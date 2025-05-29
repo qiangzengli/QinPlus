@@ -14,7 +14,8 @@ dependencyResolutionManagement {
             setUrl("https://jitpack.io")
         }
         maven {
-            setUrl("https://github.com/kshoji/javax.sound.midi-for-Android/raw/develop/javax.sound.midi/repository")
+//            setUrl("https://github.com/kshoji/javax.sound.midi-for-Android/raw/develop/javax.sound.midi/repository")
+            setUrl("https://gitee.com/LIZENGQIANG/javax.sound.midi-for-Android/raw/develop/javax.sound.midi/repository")
         }
 //        flatDir {
 //            setDirs("libs")

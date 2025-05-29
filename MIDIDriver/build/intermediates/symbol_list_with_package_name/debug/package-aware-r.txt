@@ -1,2 +1,0 @@
-jp.kshoji.driver.midi
-xml device_filter

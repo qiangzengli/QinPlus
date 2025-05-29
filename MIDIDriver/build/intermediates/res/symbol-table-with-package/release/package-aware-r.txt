@@ -1,2 +1,0 @@
-jp.kshoji.driver.midi
-int xml device_filter 0x7f190001
