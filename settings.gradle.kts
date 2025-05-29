@@ -24,7 +24,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Music"
+rootProject.name = "QinPlus"
 include(":app")
 include(":android-pdfview")
 include(":MIDIDriver")
