@@ -425,6 +425,7 @@ public class ScorePlayerView {
                     }
                 }
             }
+            // 练习模式
             if (scoreClockController.getStatusModule().isPractice()) {
                 //判断对错
                 scoreClockController.scoreJudge.judge(currentPlayingTick);

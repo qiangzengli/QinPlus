@@ -181,7 +181,7 @@ public class DBManager {
                 // 获取表中的第7 列，value 值
                 value = c.getInt(7);
                 _delegate.slotBlockAmount(value);
-                // 这里代码貌似存在问题
+                // 没有问题
                 for (int i = 1; i <= value; i++) {
                     String query_select = "select * from NoteOnMessage where id_num = ?";
                     String this_value = String.valueOf(i);
@@ -197,12 +197,8 @@ public class DBManager {
                             int tick = c.getInt(1);
                             //小节号
                             int measuer = c.getInt(3);
-                            // 没用到，先忽略含义
-                            int staff = c.getInt(4);
                             //音乐中表示声部
                             int voice = c.getInt(5);
-                            // 键值号
-                            int noteNum = c.getInt(6);
                             // 音高
                             int pitch = c.getInt(7);
                             // 音符的X，通常是时间轴的位置，越靠右越晚
@@ -220,7 +216,7 @@ public class DBManager {
                                 hand = 0;
                             }
 
-                            _delegate.noteIdNum(id_num, tick, measuer, staff, voice, noteNum, pitch, x, y, hand);
+                            _delegate.noteIdNum(id_num, tick, measuer, voice, pitch, x, y, hand);
                         }
                     }
                 }

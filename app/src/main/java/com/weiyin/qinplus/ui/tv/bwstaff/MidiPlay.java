@@ -116,6 +116,7 @@ public class MidiPlay {
 
             Message msg = new Message();
             msg.what = 1;
+            // 传过来之前是measure.tick/16,然后*16后传递给msg.obj,所以最终传递的还是measure.tick
             msg.obj = (currentTickI) * 16;
             if (!mp3Start) {
                 if (!scoreController.szScore.hasZeroMeasure) {
@@ -135,7 +136,7 @@ public class MidiPlay {
             if (currentTickI == 0) {
                 midiPlayerDate = midiPlayer.getCurrentPosition();
             }
-/* Log.i(TAG,"伴奏="+mp3Player.getCurrentPosition()+" midi="+midiPlayer.getCurrentPosition()+" currentTickI="+currentTickI); */
+            /* Log.i(TAG,"伴奏="+mp3Player.getCurrentPosition()+" midi="+midiPlayer.getCurrentPosition()+" currentTickI="+currentTickI); */
             currentTickI = currentTickI + 1;
             mHandler.sendMessage(msg);
             if (!scoreController.szScore.hasZeroMeasure) {
@@ -144,7 +145,7 @@ public class MidiPlay {
                     if (scoreController.getStatusModule().isWatefallview()) {
                         waterFalling = true;
                         startDate = (int) (0 - date / 1000 / 1000 * startTick);
-/* Log.i(TAG, "startDate=" + startDate); */
+                        /* Log.i(TAG, "startDate=" + startDate); */
                         scoreController.setFirst(false);
                     }
                 }
@@ -217,16 +218,31 @@ public class MidiPlay {
     }
 
     public void play() {
-/*currentTempo = 80f;//45f  最小值为64分音符的时间间隔  16 */
+        /*currentTempo = 80f;//45f  最小值为64分音符的时间间隔  16 */
         mp3Start = false;
         midiDate = 0;
         boolean add = true;
-/* Log.i(TAG,"currentTempo===="+currentTempo); */
+        /* Log.i(TAG,"currentTempo===="+currentTempo); */
+//        计算 16 个 tick 的持续时间（秒），假设 256 tick = 1 个四分音符。
         tickInterval = (float) (60.0 / currentTempo / 256.0 * 16);
         long playDate;
         if (stop) {
             for (int i = 0; i < scoreController.szScore.measure.size(); i++) {
                 if (scoreController.szScore.measure.get(i).bpm != 0) {
+                    /*
+                     * scoreController.szScore.measure.get(i).bpm
+                     * 获取第 i 个小节的 BPM（节奏）。
+                     * 60.0 / bpm
+                     * 表示 1 个四分音符的时长（单位：秒）。
+                     * / 256.0
+                     * 假设 1 个四分音符有 256 tick，求出 1 tick 的时长（秒）。
+                     * * 16
+                     * 表示 16 个 tick 的总时长（秒）。
+                     * * 1000 * 1000 * 1000
+                     * 把秒换算成 纳秒（1 秒 = 10⁹ 纳秒）。
+                     * (long)
+                     * 最终结果强制转换为 long 类型（因为纳秒是整数时间戳
+                     */
                     date = (long) ((float) (60.0 / (scoreController.szScore.measure.get(i).bpm * scoreController.getSpeed()) / 256.0 * 16) * 1000 * 1000 * 1000);
                     stop = false;
                     break;
@@ -237,11 +253,11 @@ public class MidiPlay {
         if (!scoreController.szScore.hasZeroMeasure) {
             currentMeasureTickAmount = scoreController.currentMeasureTickAmount / 16;
         }
-/* Log.i(TAG,"size="+scoreController.szScore.variableSpeed.size()); */
+        /* Log.i(TAG,"size="+scoreController.szScore.variableSpeed.size()); */
         if (scoreController.szScore.variableSpeed.size() > 1) {
             for (int i = 0; i < scoreController.szScore.variableSpeed.size() - 1; i++) {
                 ScoreDataCoordinator.Measure szMeasure = scoreController.szScore.variableSpeed.get(i);
-/* Log.i(TAG,"szMeasure.tick="+szMeasure.tick+"szMeasure.bpm="+szMeasure.bpm); */
+                /* Log.i(TAG,"szMeasure.tick="+szMeasure.tick+"szMeasure.bpm="+szMeasure.bpm); */
                 if (currentTickI * 16 >= szMeasure.tick) {
                     if (currentTickI * 16 < scoreController.szScore.variableSpeed.get(i + 1).tick) {
                         if (!add) {
@@ -284,7 +300,7 @@ public class MidiPlay {
                                     midiDate = (int) (midiDate - currentMeasureTickAmount * tickInterval);
                                 }
                             }
-/* Log.i(TAG,"<add="+midiDate +" startTick="+startTick+" scoreController.currentMeasureTickAmount="+currentMeasureTickAmount +" startWaterDate=startWaterDate   ====="+( startTick * date / 1000 / 1000)+" ======"+(currentMeasureTickAmount * tickInterval) ); */
+                            /* Log.i(TAG,"<add="+midiDate +" startTick="+startTick+" scoreController.currentMeasureTickAmount="+currentMeasureTickAmount +" startWaterDate=startWaterDate   ====="+( startTick * date / 1000 / 1000)+" ======"+(currentMeasureTickAmount * tickInterval) ); */
                         }
                     } else {
                         add = false;
@@ -295,9 +311,9 @@ public class MidiPlay {
                 }
             }
         } else {
-/* Log.i(TAG,"midiDate="+midiDate); */
+            /* Log.i(TAG,"midiDate="+midiDate); */
             int midiDat = (int) (midiDate + (currentTickI + currentMeasureTickAmount) * 1000 * tickInterval);
-/* Log.i(TAG,"midiDate="+midiDate); */
+            /* Log.i(TAG,"midiDate="+midiDate); */
             startPulseTime = midiDat - startTick * date / 1000 / 1000 - currentMeasureTickAmount * 1000 * tickInterval;
             prevPulseTime = midiDat - startTick * date / 1000 / 1000 - currentMeasureTickAmount * 1000 * tickInterval;
             if (currentTickI * 16 >= startDateTick * 16 + scoreController.currentMeasureTickAmount) {
@@ -306,17 +322,17 @@ public class MidiPlay {
                 midiDate = (int) (midiDate + (startDateTick + currentMeasureTickAmount) * 1000 * tickInterval);
             }
             if (!scoreController.isFirst()) {
-/* Log.i(TAG, "midiDate=" + midiDate); */
+                /* Log.i(TAG, "midiDate=" + midiDate); */
                 if (scoreController.peleView == null) {
                     midiDate = (int) (midiDate - currentMeasureTickAmount * 1000 * tickInterval);
                 }
-/* Log.i(TAG,"midiDate="+midiDate); */
+                /* Log.i(TAG,"midiDate="+midiDate); */
             }
-/* Log.i(TAG,"if<1  "+midiDate +" startTick="+startTick+" scoreController.currentMeasureTickAmount="+currentMeasureTickAmount +" startWaterDate=" +"  ====="+( startTick * date / 1000 / 1000)+" ======" ); */
+            /* Log.i(TAG,"if<1  "+midiDate +" startTick="+startTick+" scoreController.currentMeasureTickAmount="+currentMeasureTickAmount +" startWaterDate=" +"  ====="+( startTick * date / 1000 / 1000)+" ======" ); */
         }
         playDate = (long) (tickInterval * 1000 * 1000 * 1000);
 
-/* float tickInterval = (float) (60.0 / waterSudu / 256.0 * 16); */
+        /* float tickInterval = (float) (60.0 / waterSudu / 256.0 * 16); */
         unit = (float) (currentTempo * ((60.0 / currentTempo / 256.0 * 16) * 1000) * 16 / 60);
 
 

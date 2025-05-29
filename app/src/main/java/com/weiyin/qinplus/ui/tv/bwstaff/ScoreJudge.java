@@ -51,6 +51,9 @@ public class ScoreJudge {
         slotIdx = 0;
     }
 
+    /**
+     * 弹对前进的judge 方法
+     */
     public boolean judge() {
         boolean result = inspectResult(slotIdx, true)[0].equalsIgnoreCase("correct");
         if (result) {
@@ -59,6 +62,10 @@ public class ScoreJudge {
         return result;
     }
 
+    /**
+     * 练习模式的judge 方法
+     * @param tick 当前节奏的tick
+     */
     public void judge(int tick) {
         if (in && (tick >= szScore.slot.get(slotIdx).tick + CORRECT_DURATION_IN_TICK)) {
             //当当前的tick值大于当前的音符的tick值 + 50后和进入计算
@@ -88,9 +95,13 @@ public class ScoreJudge {
      */
     private String[] inspectResult(int slotBlockNo, boolean bounceForward) {
 /* Log.i(TAG,"slotBlockNo="+slotBlockNo); */
+        // 右手音高实体
         ArrayList<PianoModule> currentSlotPitchArray1 = new ArrayList<>();
+        // 左手
         ArrayList<PianoModule> currentSlotPitchArray2 = new ArrayList<>();
+        // 右手
         ArrayList<PianoModule> nextCurrentSlotPitchArray1 = new ArrayList<>();
+        // 左手
         ArrayList<PianoModule> nextCurrentSlotPitchArray2 = new ArrayList<>();
 
         ArrayList<Integer> currentSlotPitch1 = new ArrayList<>();
@@ -396,7 +407,9 @@ public class ScoreJudge {
                                ArrayList<PianoModule> keyBardArray) {
         String result = "leak";
         String result1 = "leak";
+        // 记录左手键分值
         double jiezou1 = 0;
+        // 记录右手键分值
         double jiezou2 = 0;
         double jiezou = 0;
         double lidu = 0;
@@ -407,7 +420,9 @@ public class ScoreJudge {
         String tanzou2 = "";
         String key = "";
 
+        // 左手键值和右手键值相同的元素从右手键值集合中移除
         for (int i = 0; i < staff1Array.size(); i++) {
+            // 遍历左手键
             for (int j = 0; j < staff2Array.size(); j++) {
                 if (staff1Array.get(i).getNumber() == staff2Array.get(j).getNumber()) {
                     staff1Array.remove(i);
@@ -417,9 +432,11 @@ public class ScoreJudge {
             }
         }
 
+        // 将键盘数组拼接成字符串
         for (int i = 0; i < keyBardArray.size(); i++) {
             key = key + " " + (keyBardArray.get(i).getNumber());
         }
+        //右手键，将所有右手键 弹奏出来的分值累加到 jiezou1 变量中
         for (int i = 0; i < staff1Array.size(); i++) {
             PianoModule pianoModule = staff1Array.get(i);
 
@@ -434,14 +451,17 @@ public class ScoreJudge {
                     abs = 40;
                 }
                 abs = (-1 / 3600) * (abs - 40) * (abs - 40) + 1;
+                // 将
                 jiezou1 = jiezou1 + abs;
             }
         }
 
         for (int i = 0; i < staff2Array.size(); i++) {
+            // 左手键，将所有左手键 弹奏出来的分值累加到 jiezou2 变量中
             PianoModule pianoModule = staff2Array.get(i);
             tanzou2 = tanzou2 + " " + pianoModule.getNumber();
             for (int j = 0; j < keyBardArray.size(); j++) {
+                // 弹奏的键值，tick和力度
                 PianoModule pianoModule1 = keyBardArray.get(j);
                 float abs = (Math.abs(pianoModule.getTick() - pianoModule1.getTick()));
                 if (abs >= (CORRECT_DURATION_IN_TICK * 2)) {
@@ -470,6 +490,7 @@ public class ScoreJudge {
 
         LogUtil.i(TAG, "staff1.size=" + staff1Array.size() + " staff2.size=" + staff2Array.size() + " keysize=" + keyBardArray.size() + " tan1=" + tanzou + " tan2=" + tanzou2 + " key=" + key);
         //漏弹===============================================
+        // 右手键盘+左手键盘 数量> 键盘总数量
         if (staff1Array.size() + staff2Array.size() > keyBardArray.size()) {
             int correctIndex = 0;
             int correctIndex1 = 0;
@@ -479,6 +500,7 @@ public class ScoreJudge {
             //正确和错误============================================
             for (int i = 0; i < keyBardArray.size(); i++) {
                 PianoModule pianoModule = keyBardArray.get(i);
+                // 循环右手键
                 for (int j = 0; j < staff1Array.size(); j++) {
                     PianoModule pianoModule1 = staff1Array.get(j);
                     if (pianoModule1.getNumber() == pianoModule.getNumber()) {
@@ -492,6 +514,8 @@ public class ScoreJudge {
                         break;
                     }
                 }
+
+                // 循环左手键
                 for (int j = 0; j < staff2Array.size(); j++) {
                     PianoModule pianoModule1 = staff2Array.get(j);
                     if (pianoModule1.getNumber() == pianoModule.getNumber()) {

@@ -943,6 +943,7 @@ public class OpernActivity extends BaseActivity implements OnClickListener, UsbC
                     practiceText.setText("继续");
                     bwStaff.pause();
                 } else {
+                    // 练习模式需要 连接蓝牙，或者USB
                     if (blueToothControl.getConnectFlag() || usbController.ismConnected()) {
                         practiceImg.setImageResource(R.drawable.opern_practice_pause_o);
                         practiceText.setText("暂停");

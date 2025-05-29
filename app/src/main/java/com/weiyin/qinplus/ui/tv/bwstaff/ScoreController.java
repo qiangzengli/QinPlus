@@ -654,12 +654,15 @@ public class ScoreController implements OnDrawListener, OnPageChangeListener, In
         }
         LogUtil.i(TAG, thisMeaNo + " " + szScore.slot.size());
 
-        // 疑问： slot 到底是什么意思，网上貌似了解不到
+        // 疑问： slot 到底是什么意思，网上貌似了解不到，应该是总的小节数
         if (thisMeaNo < szScore.slot.size()) {
+            // 当前小节的tick数
             int thisMeaTick;
+            // 如果不是 最后的两个小节
             if (thisMeaNo < szScore.slot.size() - 2) {
                 thisMeaTick = szScore.measure.get(thisMeaNo + 2).tick;
             } else {
+                // 1024 / currentBeatType * currentBeats 表示一个小节总tick数
                 thisMeaTick = szScore.measure.get(thisMeaNo + 1).tick + 1024 / currentBeatType * currentBeats;
             }
             int thisTick = szScore.measure.get(thisMeaNo + 1).tick;
@@ -734,8 +737,10 @@ public class ScoreController implements OnDrawListener, OnPageChangeListener, In
             super.handleMessage(msg);
             switch (msg.what) {
                 case 1:
+                    // 拿到的是measure.tick,
                     date = (int) msg.obj;
 /* Log.i(TAG,"date线程="+date); */
+                    // tuck 是 十六分之一tick
                     tuck = date / 16;
 /* Log.i(TAG,"data"+date); */
                     if (date == ((tickNumber))) {
@@ -803,6 +808,7 @@ public class ScoreController implements OnDrawListener, OnPageChangeListener, In
         if (reduction) {
             // 如果当前播放的小节>1
             if (currentMeasureNo > 1) {
+                // 此方法需要着重研究，tick参与的一些计算
                 synToTickTimeLine(currentMeasureNo - 2);
             }
             reduction = false;

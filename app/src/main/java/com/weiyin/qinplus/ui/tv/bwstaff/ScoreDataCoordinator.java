@@ -35,13 +35,13 @@ public class ScoreDataCoordinator {
     private static final String TAG = ScoreDataCoordinator.class.getSimpleName();
 
     /**
-     * 记录当前音符的所有信息实体
+     * 记录当前音符的所有信息实体，对应 NoteOnMessage表中的字段
      */
     class Note {
         /**
-         * 音符的序列
+         *  同一tick的音节序号
          */
-        int idx;
+//        int idx;
         /**
          * 音符的X，通常是时间轴的位置，越靠右越晚
          */
@@ -180,7 +180,7 @@ public class ScoreDataCoordinator {
         /**
          * Slot
          */
-        // slot 的数量
+        // slot 的数量 对应 NoteOnMessage中第一行数据的value 字段值
         int slotAmount;
         ArrayList<SlotBlock> slot;
 
@@ -440,28 +440,16 @@ public class ScoreDataCoordinator {
 
     private int index = 0;
 
-    public void noteIdNum(int i, int tick, int measure, int staff, int voice, int numInVoice, int pitch, int x, int y, int hand) {
-
+    public void noteIdNum(int i, int tick, int measure, int voice, int pitch, int x, int y, int hand) {
         Note note = new Note();
-        note.idx = numInVoice;
         note.voice = voice;
         note.pitch = pitch;
         note.x = x;
         note.y = y;
         note.hand = hand;
         note.measure = measure;
-        StatusModule statusModule = StatusModule.getStatusModule();
-
-//        if (statusModule.getType() == Constant.RIGHT_HAND) {
-//            if (hand != 1) {
-//                return;
-//            }
-//        } else if (statusModule.getType() == Constant.LEFT_HAND) {
-//            if (hand != 0) {
-//                return;
-//            }
-//        }
-
+        // 第一次进来(i==0,index==0 )，这里不执行，
+        // 此处的i 是 NoteOnMessage表中的第一个字段，id_num
         if (i != index) {
             SlotBlock szSlotBlock = new SlotBlock();
             szSlotBlock.idx = score.slot.size() - 1;
@@ -472,14 +460,13 @@ public class ScoreDataCoordinator {
                 score.slotSize++;
             }
         }
+        // 如果第一小节下标从1 开始，小节号= measure - 1 ，否则小节号= measure
         int measureNo = firstMeasureIdx == 1 ? measure - 1 : measure;
         if (score.measure.get(measureNo).backNoteIdx == Integer.MAX_VALUE) {
             score.measure.get(measureNo).backNoteIdx = score.slot.size() - 1;
         }
-        if (score.slot.size() > 0) {
-            int a = score.slot.get(score.slot.size() - 1).noteAmount;
+        if (!score.slot.isEmpty()) {
             score.slot.get(score.slot.size() - 1).note.add(note);
-            //score.slot.get(score.slot.size()-1).notePractice.add(note);
             score.slot.get(score.slot.size() - 1).noteAmount++;
         }
         index = i;
