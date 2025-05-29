@@ -13,8 +13,8 @@ package com.weiyin.qinplus.rest;
  * @author niejunfeng
  */
 public class RequestConfigs {
-    public static final String BASE_URL = "http://47.98.180.79:9325";
-    public final static String ROOT_PATH = "/win_piano/";
+    public static final String BASE_URL = "http://121.41.128.49:9017";
+    public final static String ROOT_PATH = "/qin_plus/";
     public static final String HTTPS_BASE_URL = "https://sslcs.amso.com.cn";
 
     public static final String PATH_APP = "shuangk/";
